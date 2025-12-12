@@ -6,13 +6,8 @@ def factor(n: int):
     factors = reduce(
         list.__add__,
         ([i, n // i] for i in range(1, int(n ** 0.5) + 1) if n % i == 0))
-    factors_small = []  # small factors
-    factors_large = []  # larger factors
-    for i, item in enumerate(factors):
-        if i % 2 == 0:
-            factors_small.append(item)
-        else:
-            factors_large.append(item)
+    factors_small = factors[::2]
+    factors_large = factors[1::2]
     return factors_small, factors_large
 
 
