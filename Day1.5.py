@@ -1,9 +1,8 @@
 x = "./inputs/day1.txt"
 
-dial: int = 50  # dial starts at 50
-clicks: int = 0  # question 2
-print("")
 with open(x, "r", encoding="utf-8") as f:  # reading the input
+    dial: int = 50  # dial starts at 50
+    clicks: int = 0
     for line in f:
         line = line.strip()
         direction = line[0]  # 'L' / 'R'
@@ -12,9 +11,8 @@ with open(x, "r", encoding="utf-8") as f:  # reading the input
 
         if direction == "R":
             dial += value
-            while dial > 99:
-                dial -= 100
-                clicks += 1
+            clicks += dial // 100
+            dial = dial % 100
         else:
             if dial == 0:
                 clicks -= 1
