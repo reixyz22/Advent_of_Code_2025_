@@ -22,3 +22,4 @@ with open(file, "r", encoding="utf-8") as f:  # reading the input
         for num in range(start, end + 1):
             total += num if symmetry_checker(str(num)) else 0
     print(total)
+
