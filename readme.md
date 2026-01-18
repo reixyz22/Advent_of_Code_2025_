@@ -1,7 +1,6 @@
-# Algorithm & Data Structure Solutions
+# Algorithm & Data Structure Solutions Advent of Code 2025
 
-Solutions to programming challenges demonstrating problem-solving approach, code quality, and optimization techniques.
-
+Solutions to [Advent of Code](https://adventofcode.com/) challenges demonstrating problem-solving approach, code quality, and optimization techniques.
 ## Challenge Solutions
 
 ### Day 1: Dial State Machine
