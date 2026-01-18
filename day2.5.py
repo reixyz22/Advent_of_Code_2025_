@@ -1,13 +1,13 @@
-from functools import reduce
-
-
 # returns two lists, with both lists combined containing all factors of a number
 def factor(n: int):
-    factors = reduce(
-        list.__add__,
-        ([i, n // i] for i in range(1, int(n ** 0.5) + 1) if n % i == 0))
-    factors_small = factors[::2]
-    factors_large = factors[1::2]
+    factors_small = []
+    factors_large = []
+
+    for i in range(1, int(n ** 0.5) + 1):
+        if n % i == 0:
+            factors_small.append(i)
+            factors_large.append(n // i)
+
     return factors_small, factors_large
 
 
@@ -38,7 +38,7 @@ def main(file: str, option: str):
 
         total = 0  # set counter variable for this file run
 
-        # make factor table up to the largest length, n , of test cases
+        # make factor table up to the largest_digit length, j , of test cases
         biggest_length = 0
         factored = {}
         for id_range in id_ranges:
@@ -48,7 +48,7 @@ def main(file: str, option: str):
                 biggest_length = len(end)
         for i in range(1, biggest_length + 1):
             factored[i] = factor(i)
-
+        count = 0
         for id_range in id_ranges:
             # parse the ranges from the file
             start, end = id_range.split("-")
