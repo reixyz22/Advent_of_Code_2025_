@@ -1,2 +1,34 @@
-inputs/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.Python
+
+# C++
+cmake-build-*/
+cmake-build-debug*/
+build/
+*.o
+*.exe
+*.out
+*.a
+*.so
+*.dylib
+
+# IDEs
 .idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ignore inputs but not tests
+inputs/
+!tests/

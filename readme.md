@@ -51,9 +51,9 @@ Extracts maximum value substrings under deletion constraints.
 
 ## Running the Code
 ```bash
-python Day1.py
-python day2.5.py
-python Day3.py
+python day_1.py
+python day_2.5.py
+python day_3.py
 ```
 
 **Requirements**: Python 3.x (no external dependencies)
@@ -67,8 +67,8 @@ Solutions include validation through:
 
 Example from `day2.5.py`:
 ```python
-main("./inputs/day2.txt", "Full")      # Run on full input
-main("./tests/day2_test.txt", "Test1")  # Validate against expected
+main("./inputs/day_2.txt", "Full")      # Run on full input
+main("./tests/day_2_test.txt", "Test1")  # Validate against expected
 ```
 
 ## Approach
