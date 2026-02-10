@@ -6,8 +6,8 @@ Solutions to [Advent of Code](https://adventofcode.com/) challenges demonstratin
 ### Day 1: Dial State Machine
 Simulates a circular dial system with wraparound logic and state tracking.
 
-- **Part 1** (`Day1.py`): Tracks zero-crossings with basic wraparound
-- **Part 2** (`Day1.5.py`): Enhanced click-counting with refined boundary handling
+- **Part 1** (`Python/Day_1.py, Cpp/Day_1.cpp`): Tracks zero-crossings with basic wraparound
+- **Part 2** (`Python/Day_1.5.py, Cpp/Day_1.5.cpp`): Enhanced click-counting with refined boundary handling
 
 **Key challenge**: Proper handling of edge cases when dial is at position 0
 
@@ -16,8 +16,8 @@ Simulates a circular dial system with wraparound logic and state tracking.
 ### Day 2: Pattern Recognition
 Identifies repeating digit patterns within number ranges.
 
-- **Part 1** (`Day2.py`): Simple symmetry detection (first half = second half)
-- **Part 2** (`day2.5.py`): Complete pattern detection using factor analysis
+- **Part 1** (`Python/Day_2.py, Cpp/Day_2.cpp`): Simple symmetry detection (first half = second half)
+- **Part 2** (`Python/Day_2.5.py, Cpp/Day_2.5.cpp`): Complete pattern detection using factor analysis
 
 **Optimization**:
 ```python
@@ -27,43 +27,28 @@ for i in range(1, biggest_length + 1):
 ```
 Reduces time complexity from O(n√m) to O(n) by caching factor calculations.
 
-**Input format**: `100-999,1000-9999` (comma-separated ranges)
-
 ---
 
 ### Day 3: Greedy String Algorithms
-Extracts maximum value substrings under deletion constraints.
+Extracts maximum value substrings if you can only keep k digits.
 
-- **Part 1** (`Day3.py`): Finds two largest digits in O(n) time
-- **Part 2** WIP
+**Greedy monotonic stack algorithm**
+
+- **Part 1** (`Python/Day_3.py, Cpp/Day_3.cpp`): Finds two largest digits in O(n) time
+- **Part 2** (`Python/Day_3.5.py, Cpp/Day_3.5.cpp`): Finds K (12 for advent of code) digits in O(n) time
 **Algorithm**: O(n) time complexity, O(1) space relative to input size
 
 ---
 
-## Project Structure
-```
-├── Day[X].py          # Part 1 solutions
-├── Day[X].5.py        # Part 2 solutions (optimized/extended)
-├── inputs/            # Input files (gitignored)
-├── tests/             # Test cases and validation
-└── .gitignore
-```
 
-## Running the Code
-```bash
-python day_1.py
-python day_2.5.py
-python day_3.py
-```
-
-**Requirements**: Python 3.x (no external dependencies)
+**Requirements**: Python 3.x, C++ v17 (no external dependencies)
 
 ## Testing
 
-Solutions include validation through:
+Some solutions include built in validation through:
 - Automated test cases (`tests/` directory)
 - Expected output comparison
-- Edge case handling
+- Edge case monitoring
 
 Example from `day2.5.py`:
 ```python
@@ -71,14 +56,6 @@ main("./inputs/day_2.txt", "Full")      # Run on full input
 main("./tests/day_2_test.txt", "Test1")  # Validate against expected
 ```
 
-## Approach
 
-Each solution demonstrates:
-- Clear, readable code with descriptive naming
-- Iterative improvement (basic → optimized versions)
-- Consideration of time/space complexity trade-offs
-- Proper edge case handling
-
----
 
 **Note**: Input files are not included in the repository per `.gitignore`
