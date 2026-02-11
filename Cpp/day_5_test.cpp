@@ -21,7 +21,7 @@ int main() {
     }
 
     std::cout << "{ ";
-    for (long long x : s) {
+    for (long long x : &s) {
         std::cout << x << " ";
     }std::cout << "}" << std::endl;
 

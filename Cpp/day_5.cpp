@@ -21,7 +21,7 @@ int main() {
 
     int total = 0;
     while (std::getline(file, line)) {
-        for(auto [start,end] : ranges) {
+        for(auto [start,end] : &ranges) {
             if (std::stoll(line) >= start && std::stoll(line) <= end) {
                 total +=1;
                 break; // we have to break out of the loop so we don't duplicate-- previous method in test didn't need this

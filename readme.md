@@ -48,6 +48,17 @@ Extracts maximum value substrings if you can only keep k digits.
 - **Test** (`Cpp/Day_4_test.cpp`): Displays the grid, replacing @ symbols with the raw number of neighbors.
 - **Part 2** (`Cpp/Day_4.5.cpp`): Maybe the easiest part 2, that I've seen. Simply loops part 1, updating the grid with each pass until not further progress can be made
 
+
+### Day 5: Simple grid traversal and neighbors monitoring.
+- **Part 1** (`Cpp/Day_5.cpp`): We learned to store entire ranges and use dual comparisons 
+```c++
+if (std::stoll(line) >= start && std::stoll(line) <= end) {
+```
+rather than the naive version of looping through
+- **Test** (`Cpp/Day_5_test.cpp`): This is a naive approach that I first tried and lagged out my PC. 
+- **Part 2** (`Cpp/Day_5.5.cpp`): This deals with only ranges, which seems easier until we consider duplicates
+
+
 **Requirements**: Python 3.x, C++ v17 (no external dependencies)
 
 ## Testing
