@@ -1,6 +1,8 @@
 # Algorithm & Data Structure Solutions Advent of Code 2025
 
-Solutions to [Advent of Code](https://adventofcode.com/) challenges demonstrating problem-solving approach, code quality, and optimization techniques. This year contains 12 questions, with 2 parts each.
+Solutions to [Advent of Code](https://adventofcode.com/) challenges demonstrating problem-solving approach, code quality,
+and optimization techniques. This year contains 12 questions, with 2 parts each.
+- **Days 1-3 are done in both C++, Python. Days 4-12 (WIP) are in C++.**
 ## Challenge Solutions
 
 ### Day 1: Spinning Dial State Machine
@@ -41,6 +43,10 @@ Extracts maximum value substrings if you can only keep k digits.
 - Decided to use deque for learning purposes but also could've used a string.
 ---
 
+### Day 4: Simple grid traversal and neighbors monitoring.
+- **Part 1** (`Cpp/Day_4.cpp`): Traverses a 2d array, taking note of how populated neighboring cells are and totaling those with only 3 or fewer. 
+- **Test** (`Cpp/Day_4_test.cpp`): Displays the grid, replacing @ symbols with the raw number of neighbors.
+- **Part 2** (`Cpp/Day_4.5.cpp`): Maybe the easiest part 2, that I've seen. Simply loops part 1, updating the grid with each pass until not further progress can be made
 
 **Requirements**: Python 3.x, C++ v17 (no external dependencies)
 
@@ -55,10 +61,12 @@ Example from `day2.5.py`:
 main("./inputs/day_2.txt", "Full")      # Run on full input
 main("./tests/day_2_test.txt", "Test1")  # Validate against expected
 ```
+Most tests live dedicated files:
+- As, I progressed I found that this approach was cleaner and had fewer tradeoffs to this use case.
 
-Test case expected solutions are typically found on https://adventofcode.com/2025/.
+Test case's expected solutions are typically found on https://adventofcode.com/2025/.
 
 
 **Note**: Input files are not included in the repository per `.gitignore` and Advent Of Code's Policy. 
 
-To get your own inputs visit [Advent Of Code](https://adventofcode.com/2025/).
+To get your own full inputs visit [Advent Of Code](https://adventofcode.com/2025/).

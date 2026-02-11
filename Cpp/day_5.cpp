@@ -1,12 +1,12 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include <unordered_set>
+#include <vector>
 
 int main() {
     std::ifstream file("../inputs/day_5.txt");
     std::string line;
-    std::unordered_set<long long> s;
+    std::vector<std::pair<long long, long long>> ranges;
 
     while (std::getline(file, line)) {
         if (line.empty()) break;
@@ -15,19 +15,20 @@ int main() {
         long long start = std::stoll(line.substr(0, dash_pos));
         long long end   = std::stoll(line.substr(dash_pos + 1));
 
-        for(long long i = start; i < end; i++) {
-            s.insert(i);
+        ranges.emplace_back(start, end);
+
+    }
+
+    int total = 0;
+    while (std::getline(file, line)) {
+        for(auto [start,end] : ranges) {
+            if (std::stoll(line) >= start && std::stoll(line) <= end) {
+                total +=1;
+                break; // we have to break out of the loop so we don't duplicate-- previous method in test didn't need this
+            }
         }
     }
 
-    std::cout << "{ ";
-    for (long long x : s) {
-        std::cout << x << " ";
-    }std::cout << "}" << std::endl;
-
-
-    while (std::getline(file, line)) {
-        std::cout << line;
-    }
+    std::cout << total;
 
 }
