@@ -72,7 +72,7 @@ Example from `day2.5.py`:
 main("./inputs/day_2.txt", "Full")      # Run on full input
 main("./tests/day_2_test.txt", "Test1")  # Validate against expected
 ```
-Most tests live dedicated files:
+Most tests now live in dedicated files:
 - As, I progressed I found that this approach was cleaner and had fewer tradeoffs to this use case.
 
 Test case's expected solutions are typically found on https://adventofcode.com/2025/.
