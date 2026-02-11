@@ -1,9 +1,9 @@
 # Algorithm & Data Structure Solutions Advent of Code 2025
 
-Solutions to [Advent of Code](https://adventofcode.com/) challenges demonstrating problem-solving approach, code quality, and optimization techniques.
+Solutions to [Advent of Code](https://adventofcode.com/) challenges demonstrating problem-solving approach, code quality, and optimization techniques. This year contains 12 questions, with 2 parts each.
 ## Challenge Solutions
 
-### Day 1: Dial State Machine
+### Day 1: Spinning Dial State Machine
 Simulates a circular dial system with wraparound logic and state tracking.
 
 - **Part 1** (`Python/Day_1.py, Cpp/Day_1.cpp`): Tracks zero-crossings with basic wraparound
@@ -13,7 +13,7 @@ Simulates a circular dial system with wraparound logic and state tracking.
 
 ---
 
-### Day 2: Pattern Recognition
+### Day 2: Repeating Pattern Recognition
 Identifies repeating digit patterns within number ranges.
 
 - **Part 1** (`Python/Day_2.py, Cpp/Day_2.cpp`): Simple symmetry detection (first half = second half)
@@ -36,8 +36,9 @@ Extracts maximum value substrings if you can only keep k digits.
 
 - **Part 1** (`Python/Day_3.py, Cpp/Day_3.cpp`): Finds two largest digits in O(n) time
 - **Part 2** (`Python/Day_3.5.py, Cpp/Day_3.5.cpp`): Finds K (12 for advent of code) digits in O(n) time
-**Algorithm**: O(n) time complexity, O(1) space relative to input size
 
+**Algorithm**: O(n) time complexity, O(1) space relative to input size
+- Decided to use deque for learning purposes but also could've used a string.
 ---
 
 
@@ -47,7 +48,6 @@ Extracts maximum value substrings if you can only keep k digits.
 
 Some solutions include built in validation through:
 - Automated test cases (`tests/` directory)
-- Expected output comparison
 - Edge case monitoring
 
 Example from `day2.5.py`:
@@ -56,6 +56,9 @@ main("./inputs/day_2.txt", "Full")      # Run on full input
 main("./tests/day_2_test.txt", "Test1")  # Validate against expected
 ```
 
+Test case expected solutions are typically found on https://adventofcode.com/2025/.
 
 
-**Note**: Input files are not included in the repository per `.gitignore`
+**Note**: Input files are not included in the repository per `.gitignore` and Advent Of Code's Policy. 
+
+To get your own inputs visit [Advent Of Code](https://adventofcode.com/2025/).
