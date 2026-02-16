@@ -58,6 +58,10 @@ rather than the naive version of looping through
 - **Test** (`Cpp/Day_5_test.cpp`): This is a naive approach that I first tried and lagged out my PC. 
 - **Part 2** (`Cpp/Day_5.5.cpp`): This deals with only ranges, which seems easier until we consider duplicates, we solve this by merging the intersecting ranges together thus solving the duplicate edge case.
 
+### Day 6: Reading a strange input
+- **Part 1** (`Cpp/Day_6.cpp`): This question seems easy.. until we see how weird the input is. After figuring out that notepad was wrapping the lines, of which there are only four.
+It became a mater of building matrix while reading input and then transposing and finally doing math on that matrix. 
+
 
 **Requirements**: Python 3.x, C++ v17 (no external dependencies)
 

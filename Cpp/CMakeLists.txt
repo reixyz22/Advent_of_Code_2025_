@@ -20,7 +20,7 @@ add_executable(day_5_test day_5_test.cpp)
 add_executable(day_5 day_5.cpp)
 add_executable(day_5_part2 day_5.5.cpp)
 
-#add_executable(day_6 day_6.cpp)
+add_executable(day_6 day_6.cpp)
 #add_executable(day_6_part2 day_6.5.cpp)
 #
 #add_executable(day_7 day_7.cpp)
