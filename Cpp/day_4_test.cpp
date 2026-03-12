@@ -12,6 +12,7 @@ int main() {
         grid.push_back(line);
     }
 
+
     long long total = 0;
 
     //2d array loop
