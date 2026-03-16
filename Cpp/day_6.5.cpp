@@ -1,6 +1,3 @@
-//
-// Created by pitts on 2/17/2026.
-//
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -25,6 +22,7 @@ long long addition(const std::vector<int>& adders) {
 
 int main() {
     std::ifstream file("../inputs/day_6.txt");
+    //std::ifstream file("../tests/day_6_test.txt");
     std::string line;
 
     std::vector<std::vector<char>> homework;
@@ -35,7 +33,7 @@ int main() {
         homework.push_back(row);
     }
 
-    //Debugging
+    //Debugging input
     // for (const auto& row : homework) {
     //     for (char c : row) {
     //         std::cout << c;
@@ -50,33 +48,46 @@ int main() {
     long long total = 0;
 
     std:: vector<int> cols;
-
     bool m = true;
+
     for(int i = 0; i < homework[0].size(); i++) {
         std::string col_string;
         for (int j = 0; j < homework.size(); j++) {
-            if (homework[i][j] != '*') {
+            if (homework[j][i] == '*') { //needs to be j i since we are doing col row iteration.
                 m = true;
             }
-            else if (homework[i][j] != '+') {
+            else if (homework[j][i] == '+') {
                 m = false;
             }
-            else if (homework[i][j] != ' ') {
-                col_string += homework[i][j];
+            else if (homework[j][i] != ' ') {
+                col_string += homework[j][i];
             }
 
-            if (!col_string.empty()) { // my ide told me to do this instead of col_string != "" idk why yet tbh.
-                cols.push_back(std::stoi(col_string));
+            if ( j == homework.size() -1) { // end of col
+                if (!col_string.empty()) { // if the col isn't empty load it in
+                    cols.push_back(std::stoi(col_string));
+                }
+                else { // all blank col means that we hit the end of this homework question and now it's time to calculate
+                    if (m) {
+                        total += multiply(cols);
+                    }
+                    else {
+                        total += addition(cols);
+                    }
+                    cols = {};
+                }
             }
-            else { // all blank col means that we hit the end of this homework question and now it's time to calculate
+
+            // without buffer the last entry col becomes a nasty edge case
+            if ( j == homework.size() -1  and i == homework[0].size() - 1) {
                 if (m) {
                     total += multiply(cols);
                 }
                 else {
                     total += addition(cols);
                 }
-                cols = {};
             }
+
         }
     }
     std::cout << total;
