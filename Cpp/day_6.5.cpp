@@ -28,7 +28,6 @@ int main() {
     std::vector<std::vector<char>> homework;
 
     while (std::getline(file, line)) {
-        std::istringstream iss(line);
         std::vector<char> row(line.begin(),line.end());
         homework.push_back(row);
     }
@@ -63,29 +62,20 @@ int main() {
                 col_string += homework[j][i];
             }
 
-            if ( j == homework.size() -1) { // end of col
-                if (!col_string.empty()) { // if the col isn't empty load it in
-                    cols.push_back(std::stoi(col_string));
-                }
-                else { // all blank col means that we hit the end of this homework question and now it's time to calculate
-                    if (m) {
-                        total += multiply(cols);
-                    }
-                    else {
-                        total += addition(cols);
-                    }
-                    cols = {};
-                }
+            if ( j == homework.size() -1 and !col_string.empty()) { // end of col and if the col isn't empty load it in
+                cols.push_back(std::stoi(col_string));
             }
 
-            // without buffer the last entry col becomes a nasty edge case
-            if ( j == homework.size() -1  and i == homework[0].size() - 1) {
+            // without buffer the last entry col becomes a nasty edge case FIXED*
+            if (j == homework.size() -1 and col_string.empty() or
+                j == homework.size() -1  and i == homework[0].size() - 1) {
                 if (m) {
                     total += multiply(cols);
                 }
                 else {
                     total += addition(cols);
                 }
+                cols = {};
             }
 
         }
