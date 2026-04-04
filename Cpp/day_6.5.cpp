@@ -37,12 +37,15 @@ int main() {
     //     for (char c : row) {
     //         std::cout << c;
     //     }
+    //    std::cout << "\n";
     // }
     // alternate style that i learned in school for syntax referance / study
-    // for ( int i : homework.size())
+    // for ( int i : homework.size()){
     //     for (char c : homework[i]) {
     //         std::cout << c;
-    // }
+    //     }
+    //     std::cout << "\n";
+    //}
 
     long long total = 0;
 
