@@ -46,7 +46,7 @@ int main() {
 
         }
     }
-    print_vector(homework);
+    // print_vector(homework); //note this only looks reasonable on bite sized inputs. IE the test
     std::cout << split_count;
 
 }
